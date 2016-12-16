@@ -3,7 +3,11 @@
 	<div class="container">
 	<div class="sixteen columns bottom_line_dev">
 		<div class="footer_buttom">
-				<a href="cause.html">Entrar em Contato</a>
+				<?php if($this->session->userdata('logado')): ?>
+					<a href="<?php echo site_url('login/deslogar'); ?>">Desconectar</a>
+				<?php else: ?>
+					<a href="<?php echo site_url('login'); ?>">Login para Administração</a>
+				<?php endif;?>
 		</div>
 		<nav>
 		<ul class="footer_nav">

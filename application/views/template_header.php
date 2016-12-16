@@ -35,38 +35,33 @@
 </head>
 <body>
 
-
-
-	<!-- The Header
-	================================================== -->
-
 	<div class="header header2">
 	<div class="container">
 		<div class="four columns alpha">
 			<div class="center_mobile">
-			<a href="<a href='<?php echo site_url('catalogo'); ?>" class="logo">Gilvan<span class="dot">.</span></a>
+			<a href="<?php echo site_url('catalogo'); ?>" class="logo">Gilvan<span class="dot">.</span></a>
 			<div class="logo_tagline">Catálogo de Produtos</div>
 			</div>
 		</div>
 		<div class="twelve columns omega">
-			<div class="center_mobile">
-			<div class="header_line"><span class="vert_line">| </span>
-				<span class="header_social">
-					<a href="#" class="footer_social facebook-c"></a>
-					<a href="#" class="footer_social twitter-c"></a>
-				</span>
-			</div>
-			</div>
 
 			<nav>
 			<div id='cssmenu'>
 			<ul>
-				 <li class='last'><a href='<?php echo site_url('catalogo'); ?>'><span>Catálogo</span></a></li>
-			   <li class='last'><a href='<?php echo site_url('catalogo/contato'); ?>'><span>Contato</span></a></li>
+				<?php if($this->session->userdata('logado')): ?>
+
+					<li class='last'><a href='<?php echo site_url('catalogo/admVenda'); ?>'><b><span>Vendas</span></b></a></li>
+					<li class='last'><a href='<?php echo site_url('catalogo/admProdutos'); ?>'><b><span>Produtos</span></b></a></li>
+					<li class='last'><a href='<?php echo site_url('catalogo/admUsuario'); ?>'><b><span>Usuários / Cliente</span></b></a></li>
+    				<li class='last'><a href='<?php echo site_url('catalogo/admLerContato'); ?>'><b><span>Mensagens</span></b></a></li>
+
+				<?php endif;?>
+
+			   <li class='last'><a href='<?php echo site_url('catalogo'); ?>'><b><span>Catálogo</span></b></a></li>
+			   <li class='last'><a href='<?php echo site_url('catalogo/contato'); ?>'><b><span>Contato</span></b></a></li>
 			</ul>
 			</div>
 			</nav>
-
 
 		</div>
 	</div>
